@@ -1,48 +1,48 @@
-import { createTheme } from "@mui/material/styles";
-import typography from "./Typography";
-import { shadows } from "./Shadows";
+import { createTheme } from '@mui/material/styles';
+import typography from './Typography';
+import { shadows } from './Shadows';
 
 const baselightTheme = createTheme({
   direction: 'ltr',
   palette: {
     primary: {
-      main: '#5D87FF',
+      main: '#5ec4ce',
       light: '#ECF2FF',
-      dark: '#4570EA',
+      dark: '#2c5477'
     },
     secondary: {
       main: '#49BEFF',
       light: '#E8F7FF',
-      dark: '#23afdb',
+      dark: '#23afdb'
     },
     success: {
-      main: '#13DEB9',
-      light: '#E6FFFA',
-      dark: '#02b3a9',
-      contrastText: '#ffffff',
+      main: '#ffb578',
+      light: '#FDD2AE',
+      dark: '##c47d57',
+      contrastText: '#ffffff'
     },
     info: {
       main: '#539BFF',
       light: '#EBF3FE',
       dark: '#1682d4',
-      contrastText: '#ffffff',
+      contrastText: '#ffffff'
     },
     error: {
       main: '#FA896B',
       light: '#FDEDE8',
       dark: '#f3704d',
-      contrastText: '#ffffff',
+      contrastText: '#ffffff'
     },
     warning: {
       main: '#FFAE1F',
       light: '#FEF5E5',
       dark: '#ae8e59',
-      contrastText: '#ffffff',
+      contrastText: '#ffffff'
     },
     purple: {
       A50: '#EBF3FE',
       A100: '#6610f2',
-      A200: '#557fb9',
+      A200: '#557fb9'
     },
     grey: {
       100: '#F2F6FA',
@@ -50,24 +50,21 @@ const baselightTheme = createTheme({
       300: '#DFE5EF',
       400: '#7C8FAC',
       500: '#5A6A85',
-      600: '#2A3547',
-
+      600: '#2A3547'
     },
     text: {
       primary: '#2A3547',
-      secondary: '#5A6A85',
+      secondary: '#5A6A85'
     },
     action: {
       disabledBackground: 'rgba(73,82,88,0.12)',
       hoverOpacity: 0.02,
-      hover: '#f6f9fc',
+      hover: '#f6f9fc'
     },
-    divider: '#e5eaef',
+    divider: '#e5eaef'
   },
   typography,
   shadows
-},
-  
-);
+});
 
 export { baselightTheme };

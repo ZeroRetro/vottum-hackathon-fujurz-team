@@ -1,20 +1,22 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as LogoDark } from 'src/assets/images/logos/dark-logo.svg';
 import { styled } from '@mui/material';
 
+import logo from '../../../../assets/images/logos/blindsee.jpeg';
+
 const LinkStyled = styled(Link)(() => ({
-  height: '70px',
-  width: '180px',
+  height: '65px',
   overflow: 'hidden',
   display: 'block',
+  textAlign: 'center'
 }));
 
 const Logo = () => {
   return (
     <LinkStyled to="/">
-      <LogoDark height={70} />
+      <img alt="BlindSee" src={logo} style={{ height: '100%' }} />
     </LinkStyled>
-  )
+  );
 };
 
 export default Logo;

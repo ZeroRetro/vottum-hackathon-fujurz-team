@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 const PageContainer = ({ title, description, children }) => (
   <div>
     <Helmet>
-      <title>{title}</title>
+      <title>{'BlindSee'}</title>
       <meta name="description" content={description} />
     </Helmet>
     {children}
@@ -15,7 +15,7 @@ const PageContainer = ({ title, description, children }) => (
 PageContainer.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 export default PageContainer;

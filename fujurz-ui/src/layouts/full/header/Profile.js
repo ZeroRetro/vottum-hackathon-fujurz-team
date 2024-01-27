@@ -1,23 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Avatar,
-  Box,
-  Menu,
-  Button,
-  IconButton,
-  MenuItem,
-  ListItemIcon,
-  ListItemText
-} from '@mui/material';
+import { Avatar, Box, Menu, Button, IconButton, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 
-import { IconListCheck, IconMail, IconUser } from '@tabler/icons';
+import { IconMail } from '@tabler/icons';
 
 import ProfileImg from 'src/assets/images/profile/user-1.jpg';
 
 const Profile = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
-  const handleClick2 = (event) => {
+  const handleClick2 = event => {
     setAnchorEl2(event.currentTarget);
   };
   const handleClose2 = () => {
@@ -34,8 +25,8 @@ const Profile = () => {
         aria-haspopup="true"
         sx={{
           ...(typeof anchorEl2 === 'object' && {
-            color: 'primary.main',
-          }),
+            color: 'primary.main'
+          })
         }}
         onClick={handleClick2}
       >
@@ -44,7 +35,7 @@ const Profile = () => {
           alt={ProfileImg}
           sx={{
             width: 35,
-            height: 35,
+            height: 35
           }}
         />
       </IconButton>
@@ -61,27 +52,15 @@ const Profile = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         sx={{
           '& .MuiMenu-paper': {
-            width: '200px',
-          },
+            width: '200px'
+          }
         }}
       >
-        <MenuItem>
-          <ListItemIcon>
-            <IconUser width={20} />
-          </ListItemIcon>
-          <ListItemText>My Profile</ListItemText>
-        </MenuItem>
         <MenuItem>
           <ListItemIcon>
             <IconMail width={20} />
           </ListItemIcon>
           <ListItemText>My Account</ListItemText>
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <IconListCheck width={20} />
-          </ListItemIcon>
-          <ListItemText>My Tasks</ListItemText>
         </MenuItem>
         <Box mt={1} py={1} px={2}>
           <Button to="/auth/login" variant="outlined" color="primary" component={Link} fullWidth>
