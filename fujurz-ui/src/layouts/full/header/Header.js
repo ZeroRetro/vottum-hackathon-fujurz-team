@@ -5,10 +5,16 @@ import { uniqueId } from 'lodash';
 
 import Profile from './Profile';
 import Logo from '../shared/logo/Logo';
-import { IconAperture, IconUserPlus } from '@tabler/icons';
+import { IconAperture, IconBuildingStore, IconUserPlus } from '@tabler/icons';
 import NavItem from '../sidebar/NavItem';
 
 const headerButtons = [
+  {
+    id: uniqueId(),
+    title: 'Store',
+    icon: IconBuildingStore,
+    href: '/store'
+  },
   {
     id: uniqueId(),
     title: 'Create',
