@@ -22,7 +22,7 @@ const Router = [
       { path: '/', element: <Navigate to="/dashboard" /> },
       { path: '/dashboard', exact: true, element: <Dashboard /> },
       { path: '/store', exact: true, element: <StoreView /> },
-      { path: '/product:id', exact: true, element: <ProductPage /> },
+      { path: '/product', exact: true, element: <ProductPage /> },
       { path: '*', element: <Navigate to="/auth/404" /> }
     ]
   },

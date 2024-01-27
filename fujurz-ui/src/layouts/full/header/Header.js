@@ -15,12 +15,12 @@ const headerButtons = [
     icon: IconBuildingStore,
     href: '/store'
   },
-  {
-    id: uniqueId(),
-    title: 'Create',
-    icon: IconAperture,
-    href: '/icons'
-  },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Create',
+  //   icon: IconAperture,
+  //   href: '/icons'
+  // },
   {
     id: uniqueId(),
     title: 'Register',
