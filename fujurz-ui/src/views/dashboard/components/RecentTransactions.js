@@ -8,7 +8,7 @@ import {
   TimelineDot,
   TimelineConnector,
   TimelineContent,
-  timelineOppositeContentClasses,
+  timelineOppositeContentClasses
 } from '@mui/lab';
 import { Link, Typography } from '@mui/material';
 
@@ -30,8 +30,8 @@ const RecentTransactions = () => {
             },
             [`& .${timelineOppositeContentClasses.root}`]: {
               flex: 0.5,
-              paddingLeft: 0,
-            },
+              paddingLeft: 0
+            }
           }}
         >
           <TimelineItem>
@@ -40,7 +40,7 @@ const RecentTransactions = () => {
               <TimelineDot color="primary" variant="outlined" />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>Payment received from John Doe of $385.90</TimelineContent>
+            <TimelineContent>Payment was made of $6.95 to Gustavo</TimelineContent>
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent>10:00 am</TimelineOppositeContent>
@@ -91,7 +91,12 @@ const RecentTransactions = () => {
             <TimelineSeparator>
               <TimelineDot color="success" variant="outlined" />
             </TimelineSeparator>
-            <TimelineContent>Payment Received</TimelineContent>
+            <TimelineContent>
+              <Typography fontWeight="600">New sale recorded</Typography>{' '}
+              <Link href="/" underline="none">
+                #ML-3467
+              </Link>
+            </TimelineContent>
           </TimelineItem>
         </Timeline>
       </>

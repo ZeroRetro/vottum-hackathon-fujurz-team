@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, CardContent, Grid, Rating, Stack, Typography } from '@mui/material';
+import { Box, Button, CardContent, Grid, Rating, Stack, Typography } from '@mui/material';
 import PageContainer from 'src/components/container/PageContainer';
 import DashboardCard from '../../components/shared/DashboardCard';
 import YearlyBreakup from '../dashboard/components/YearlyBreakup';
 import RecentTransactions from '../dashboard/components/RecentTransactions';
 import ProductPerformance from '../dashboard/components/ProductPerformance';
-import Blog, { ecoCard } from '../dashboard/components/Blog';
+import { ecoCard } from '../dashboard/components/Blog';
 import BlankCard from 'src/components/shared/BlankCard';
 import _ from 'lodash';
 
@@ -16,7 +16,7 @@ const ProductPage = () => {
     <PageContainer title="Sample Page" description="this is Sample page">
       <Box>
         <Grid container spacing={3}>
-          <Grid item sm={12} md={4} lg={3}>
+          <Grid item sm={12} lg={3}>
             <BlankCard>
               <img src={product.photo} alt="img" width="100%" />
               <CardContent sx={{ p: 3, pt: 2 }}>
@@ -33,26 +33,26 @@ const ProductPage = () => {
               </CardContent>
             </BlankCard>
           </Grid>
-          <Grid item sm={12} md={4} lg={3}>
-            <DashboardCard title="Sample Page">
-              <Typography>This is a sample page</Typography>
+          <Grid item xs={12} lg={5}>
+            <DashboardCard title="By Andrew McDownland">
+              <Typography>
+                This is a mesmerizing abstract painting that will add a burst of color and energy to any space. The
+                painting features a vibrant and diverse color palette, with shades of blue, green, yellow, red, purple,
+                and more blending into each other to create complex shapes and patterns.
+              </Typography>
+              <Button color="primary" variant="contained" size="large" style={{ marginTop: '110px' }}>
+                Buy
+              </Button>
             </DashboardCard>
           </Grid>
           <Grid item xs={12} lg={4}>
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
-                <YearlyBreakup />
-              </Grid>
-            </Grid>
+            <YearlyBreakup />
           </Grid>
           <Grid item xs={12} lg={4}>
             <RecentTransactions />
           </Grid>
           <Grid item xs={12} lg={8}>
             <ProductPerformance />
-          </Grid>
-          <Grid item xs={12}>
-            <Blog />
           </Grid>
         </Grid>
       </Box>
