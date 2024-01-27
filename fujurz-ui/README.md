@@ -1,3 +1,7 @@
-# modernize-react-lite
+# UI
 
-Live demo url <a href="https://modernize-react-free.netlify.app/dashboard">Live Demo</a>
+To start the development environment execute in this directory:
+* npm install
+* npm start
+
+This app was created using react and modernize-react-lite
