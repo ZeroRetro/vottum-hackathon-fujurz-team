@@ -1,5 +1,7 @@
-# FUJURZ project development.
+# Web 3 Hackathon Vottum & DEXTools
+Janyary 2024
 
-## UI
+This repo contains a UI and a API.
 
-To start the UI enter in the fujurz-ui folder and execute "npm install" after installation execute "npm start"
+* To start the services open two terminals.
+* Execute npm install and npm start.
