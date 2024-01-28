@@ -12,12 +12,21 @@ const headers = {
 };
 
 exports.upload = async (req, res) => {
-    const { filename, filePath } = req.body;
+
     const apiUrl = 'https://ipfsapi-v2.vottun.tech/ipfs/v2/file/upload';
+
+    // multer agrega el archivo subido a req.file y los campos de texto a req.body
+    const { filename } = req.body; // El nombre del archivo que proporcionas en el formulario
+    const file = req.file; // El archivo subido
+
+    // Verifica que se proporcionen los datos necesarios
+    if (!filename || !file) {
+        return res.status(400).json({ error: 'Falta el nombre del archivo o el archivo' });
+    }
 
     const requestData = new FormData();
     requestData.append('filename', filename);
-    requestData.append('file', fs.createReadStream(filePath));
+    requestData.append('file', fs.createReadStream(file.path)); // file.path contiene la ruta del archivo subido
 
     try {
         const response = await fetch(apiUrl, {
