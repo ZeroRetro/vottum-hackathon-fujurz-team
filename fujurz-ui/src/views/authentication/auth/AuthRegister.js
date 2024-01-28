@@ -49,7 +49,6 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
           onClick={() => {
             fetch('http://localhost:4000/api/wallet/new', {
               method: 'POST',
-              mode: 'no-cors',
               headers: {
                 'Content-Type': 'application/json'
               },
@@ -62,16 +61,16 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
               })
             })
               .then(response => {
-                console.log(response);
-                return response.text();
+                if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
               })
               .then(data => {
                 console.log(data);
-                window.location.href = `https://wallet.vottun.io/?hash=ewde&username=${email}`;
-                // window.location.href = '/store';
+                window.location.href = `https://wallet.vottun.io/?hash=${data.hash}&username=${email}`;
               })
               .catch(error => {
-                // window.location.href = '/store';
                 console.error('Error:', error);
               });
           }}
