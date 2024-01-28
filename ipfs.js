@@ -46,7 +46,7 @@ app.post('/llamar-script', async (req, res) => {
 
       // Convertimos la respuesta a formato JSON
       const responseData = await response.json();
-      const fileHash = responseData.hash;
+      const fileUrl = responseData.url;
   
       // Ahora usamos fileHash para cargar metadatos
       res.json({ fileHash });
