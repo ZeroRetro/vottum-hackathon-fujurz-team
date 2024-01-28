@@ -8,7 +8,7 @@ import Logo from '../shared/logo/Logo';
 import { IconAperture, IconBuildingStore, IconUserPlus } from '@tabler/icons';
 import NavItem from '../sidebar/NavItem';
 
-const headerButtons = [
+export const headerButtons = [
   {
     id: uniqueId(),
     title: 'Store',
