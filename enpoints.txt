@@ -1,0 +1,84 @@
+
+FRONTEND: transfer y los dos de wallet
+
+
+
+http://localhost:4000/api/ipfs/upload
+
+???
+
+http://localhost:4000/api/ipfs/metadata
+{
+    "name": "Asset name",
+    "image": "https://ipfsgw-pre.vottun.tech/ipfs/bafybeiecqlec4m72dzcnlis3qhrajhnayqz25qcayomj3s6cgezn5jkaje",
+    "description": "Asset description",
+    "attributes":[
+        {
+            "trait_type": "Trait 1",
+            "value": 6
+        },
+        {
+            "trait_type": "Trait 2",
+            "value": 800
+        },
+        {
+            "trait_type": "Trait 2",
+            "value": 100
+        }
+    ],
+    "data": {
+        "artist": "Vottun SL",
+        "Quantity": 500
+    }
+}
+
+http://localhost:4000/api/nft/deploy
+{
+    "name": "Vottun 721 contract",
+    "symbol": "VTN721",
+    "network": 80001,
+    "gasLimit": 6000000,
+    "alias": "My first 721 contract"
+}
+
+
+
+http://localhost:4000/api/nft/mint
+{
+    "recipientAddress": "0xa4750976879ef2..59abd3ac1ab78873a0",
+    "tokenId": 1,
+    "ipfsUri": "https://ipfsgw.vottun.tech/ipfs/QmZX4xbbqx2..HUGJurLqZ95NVv97",
+    "ipfsHash": "QmZX4xbbqx2..HUGJurLqZ95NVv97",
+    "network": 80001,
+    "contractAddress": "0x6412bdbDf58634..f6805cb83613B2B1",
+    "royaltyPercentage": 10,
+    "gas": 3000000
+}
+
+
+
+http://localhost:4000/api/nft/transfer
+{
+    "contractAddress": "0x6412bdbDf..1Cf6805cb83613B2B1",
+    "network": 80001,
+    "id": 1,
+    "from": "0xa47509768..59abd3ac1ab78873a0",
+    "to": "0x8C437496D4..6a34CD47863732165A3"
+}
+
+
+http://localhost:4000/api/wallet/new
+{
+    "username": "user@invalidemail.com",
+    "strategies": [2,3],
+    "callbackUrl": "https://callback.vottun.tech/rest/v1/success/",
+    "fallbackUrl": "https://fallback.vottun.tech/rest/v1/error/",
+    "cancelUrl": "https://fallback.vottun.tech/rest/v1/cancel/"
+}
+
+
+
+http://localhost:4000/api/wallet/address
+{
+    "userEmail": "user@invalidemail.com"
+}
