@@ -9,6 +9,7 @@ const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')))
 /* ****Pages***** */
 const Dashboard = Loadable(lazy(() => import('../views/dashboard/Dashboard')));
 const ProductPage = Loadable(lazy(() => import('../views/products/ProductPage')));
+const CheckPage = Loadable(lazy(() => import('../views/products/CheckPage')));
 const StoreView = Loadable(lazy(() => import('../views/dashboard/StoreView')));
 const Error = Loadable(lazy(() => import('../views/authentication/Error')));
 const Register = Loadable(lazy(() => import('../views/authentication/Register')));
@@ -23,6 +24,7 @@ const Router = [
       { path: '/dashboard', exact: true, element: <Dashboard /> },
       { path: '/store', exact: true, element: <StoreView /> },
       { path: '/product', exact: true, element: <ProductPage /> },
+      { path: '/check', exact: true, element: <CheckPage /> },
       { path: '*', element: <Navigate to="/auth/404" /> }
     ]
   },

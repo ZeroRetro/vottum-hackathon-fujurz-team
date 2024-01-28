@@ -13,7 +13,7 @@ const ProductPage = () => {
   const ecoCardDuplicated = _.clone(ecoCard);
   const product = ecoCardDuplicated[0];
   return (
-    <PageContainer title="Sample Page" description="this is Sample page">
+    <PageContainer title={`${product.title}`} description={`${product.description}`}>
       <Box>
         <Grid container spacing={3}>
           <Grid item sm={12} lg={3}>
@@ -40,7 +40,31 @@ const ProductPage = () => {
                 painting features a vibrant and diverse color palette, with shades of blue, green, yellow, red, purple,
                 and more blending into each other to create complex shapes and patterns.
               </Typography>
-              <Button color="primary" variant="contained" size="large" style={{ marginTop: '110px' }}>
+              <Button
+                color="primary"
+                variant="contained"
+                size="large"
+                style={{ marginTop: '110px' }}
+                onClick={() => {
+                  fetch('http://localhost:4000/api/checkout', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      amount: product.price
+                    })
+                  })
+                    .then(response => response.json())
+                    .then(data => {
+                      window.location.href = '/check';
+                    })
+                    .catch(error => {
+                      window.location.href = '/check';
+                      console.error('Error:', error);
+                    });
+                }}
+              >
                 Buy
               </Button>
             </DashboardCard>

@@ -12,18 +12,19 @@ const Dashboard = () => {
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
       <DashboardCard>
-        <div class="container">
-          <div class="title">Siente el Arte</div>
-          <div class="content">
-            <div class="text-container">
+        <div className="container">
+          <div className="title">Siente el Arte</div>
+          <div className="content">
+            <div className="text-container">
               <p>
                 <b>BlindSee</b> es un espacio libre de condicionamiento social donde el arte, la diversidad y la pasión
                 se den la mano. Un espacio donde se pueda libremente exponer las creaciones de artistas emergentes que
                 utilizan una nueva tecnologia que transforma el moviento en Arte.
               </p>
               <p>
-                En BlindSee se puede explorar el arte de una forma diferente, donde el movimiento se convierte en arte y
-                el arte en movimiento. Un espacio donde se puede sentir el arte y la pasión de los artistas emergentes.
+                En <b>BlindSee</b> se puede explorar el arte de una forma diferente, donde el movimiento se convierte en
+                arte y el arte en movimiento. Un espacio donde se puede sentir el arte y la pasión de los artistas
+                emergentes.
               </p>
               <p>
                 Somos un lugar en el que las personas invidentes puedan compartir su manera de percibir el mundo a
@@ -42,7 +43,7 @@ const Dashboard = () => {
                 Register Now
               </Button>
             </div>
-            <div class="image-container">
+            <div className="image-container">
               <img src={imgDashboard} alt="img" width="100%" />
             </div>
           </div>
