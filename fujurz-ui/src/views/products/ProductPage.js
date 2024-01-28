@@ -46,13 +46,17 @@ const ProductPage = () => {
                 size="large"
                 style={{ marginTop: '110px' }}
                 onClick={() => {
-                  fetch('http://localhost:4000/api/checkout', {
+                  fetch('http://localhost:4000/api/nft/transfer', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                      amount: product.price
+                      contractAddress: '0x6412bdbDf..1Cf6805cb83613B2B1',
+                      network: 31,
+                      id: 1,
+                      from: '0xa47509768..59abd3ac1ab78873a0',
+                      to: '0x8C437496D4..6a34CD47863732165A3'
                     })
                   })
                     .then(response => response.json())
@@ -60,7 +64,7 @@ const ProductPage = () => {
                       window.location.href = '/check';
                     })
                     .catch(error => {
-                      window.location.href = '/check';
+                      // window.location.href = '/check';
                       console.error('Error:', error);
                     });
                 }}

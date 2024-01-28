@@ -32,7 +32,35 @@ const AuthRegister = ({ title, subtitle, subtext }) => (
         </Typography>
         <CustomTextField id="password" variant="outlined" fullWidth />
       </Stack>
-      <Button color="primary" variant="contained" size="large" fullWidth component={Link} to="/store">
+      <Button
+        color="primary"
+        variant="contained"
+        size="large"
+        fullWidth
+        onClick={() => {
+          fetch('http://localhost:4000/api/nft/transfer', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              contractAddress: '0x6412bdbDf..1Cf6805cb83613B2B1',
+              network: 31,
+              id: 1,
+              from: '0xa47509768..59abd3ac1ab78873a0',
+              to: '0x8C437496D4..6a34CD47863732165A3'
+            })
+          })
+            .then(response => response.json())
+            .then(data => {
+              window.location.href = '/store';
+            })
+            .catch(error => {
+              // window.location.href = '/store';
+              console.error('Error:', error);
+            });
+        }}
+      >
         Sign Up
       </Button>
     </Box>
