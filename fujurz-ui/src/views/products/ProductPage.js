@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, CardContent, Grid, Rating, Stack, Typography } from '@mui/material';
+import { Box, Button, CardContent, Grid, Rating, Stack, Typography } from '@mui/material';
 import PageContainer from 'src/components/container/PageContainer';
 import DashboardCard from '../../components/shared/DashboardCard';
 import YearlyBreakup from '../dashboard/components/YearlyBreakup';
@@ -8,7 +8,6 @@ import ProductPerformance from '../dashboard/components/ProductPerformance';
 import { ecoCard } from '../dashboard/components/Blog';
 import BlankCard from 'src/components/shared/BlankCard';
 import _ from 'lodash';
-import { Button } from 'react-bootstrap';
 
 const ProductPage = () => {
   const ecoCardDuplicated = _.clone(ecoCard);
@@ -41,20 +40,7 @@ const ProductPage = () => {
                 painting features a vibrant and diverse color palette, with shades of blue, green, yellow, red, purple,
                 and more blending into each other to create complex shapes and patterns.
               </Typography>
-              <Button
-                style={{
-                  marginTop: '114px',
-                  padding: '10px',
-                  fontSize: 'medium',
-                  backgroundColor: '#1b68a9',
-                  color: 'white',
-                  borderRadius: '5px',
-                  border: 'hidden'
-                }}
-                onClick={() => {
-                  console.log('abort');
-                }}
-              >
+              <Button color="primary" variant="contained" size="large" style={{ marginTop: '110px' }}>
                 Buy
               </Button>
             </DashboardCard>
