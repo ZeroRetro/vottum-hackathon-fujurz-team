@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+
+  .text-container {
+    width: 60%; 
+    padding: 20px; 
+  }
+
+  .image-container {
+    width: 40%; 
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
