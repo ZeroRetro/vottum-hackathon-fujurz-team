@@ -46,6 +46,7 @@ const ProductPage = () => {
                 size="large"
                 style={{ marginTop: '110px' }}
                 onClick={() => {
+                  // FIXME: fetch not working (CORS error)
                   fetch('http://localhost:4000/api/nft/transfer', {
                     method: 'POST',
                     headers: {

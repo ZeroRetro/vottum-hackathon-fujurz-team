@@ -47,6 +47,7 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
           size="large"
           fullWidth
           onClick={() => {
+            // FIXME: fetch not working (CORS error)
             fetch('http://localhost:4000/api/wallet/new', {
               method: 'POST',
               headers: {
@@ -72,6 +73,8 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
               })
               .catch(error => {
                 console.error('Error:', error);
+                // FIXME: Remove this line
+                window.location.href = `https://wallet.vottun.io/?hash=${'test'}&username=${'test'}`;
               });
           }}
         >
