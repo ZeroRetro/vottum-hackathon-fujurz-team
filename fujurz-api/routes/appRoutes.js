@@ -20,6 +20,6 @@ router.post('/ipfs/metadata', ipfsController.uploadMetadata);
 
 // Rutas para Wallet
 router.post('/wallet/new', walletController.createNewHash);
-router.get('/wallet/address', walletController.getCustodiedWalletAddress);
+router.post('/wallet/address', walletController.getCustodiedWalletAddress);
 
 module.exports = router;

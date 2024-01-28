@@ -43,21 +43,24 @@ exports.getCustodiedWalletAddress = async (req, res) => {
     // El frontend debe enviar en los parámetros de la consulta (query):
     // userEmail (string): Email del usuario para obtener la dirección de su wallet
 
-
+    console.log(req.body);
     try {
-        const { userEmail } = req.query;
-        const response = await fetch(`https://api.vottun.tech/cwll/v1/evm/wallet/custodied/address?userEmail=${encodeURIComponent(userEmail)}`, {
-            method: 'GET',
-            headers: headers
+        const { userEmail } = req.body;
+        const response = await fetch(`https://api.vottun.tech/cwll/v1/evm/wallet/custodied/address`, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({ userEmail: userEmail }) 
         });
-
+        
         if (!response.ok) {
+            //console.log(response)
             throw new Error('Error al obtener la dirección de la wallet');
         }
 
         const data = await response.json();
         res.status(200).json(data);
     } catch (error) {
+        console.log('error', error)
         res.status(503).send(error.message);
     }
 };

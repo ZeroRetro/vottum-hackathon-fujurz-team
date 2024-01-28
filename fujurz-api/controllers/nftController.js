@@ -66,6 +66,7 @@ exports.mintNFT = async (req, res) => {
         }
 
         const data = await response.json();
+    
         res.json(data);
     } catch (error) {
         res.status(503).send(error.message);
@@ -74,10 +75,10 @@ exports.mintNFT = async (req, res) => {
 
 exports.transferNFT = async (req, res) => {
     // Datos requeridos desde el frontend:
-    // contractAddress (string): Dirección del contrato inteligente.
-    // network (int): ID de la cadena de la red donde reside el contrato.
-    // id (int): ID del NFT que será transferido.
-    // from (string): Dirección que originalmente posee los NFTs.
+    // contractAddress (string): 0xc75Be61053ce4D44ef60810FAf0BcB1E4Fe0d2d3.
+    // network (int): 31.
+    // id (int): 1.
+    // from (string): 0xb41212d7018f09c843669591c9df7b5b88f2b1c2.
     // to (string): Dirección a la que se transferirá el NFT.
     try {
         const response = await fetch('https://api.vottun.tech/erc/v1/erc721/transfer', {
